@@ -1,0 +1,101 @@
+body {
+  text-align: center;
+}
+ul,
+ol {
+  list-style: none;
+}
+#p1 {
+  background: royalblue;
+  width: 120px;
+  height: 30px;
+  border-radius: 6px;
+}
+#p1:hover {
+  background: purple;
+}
+#p2 {
+  width: 120px;
+  height: 30px;
+  border-radius: 6px;
+  background: royalblue;
+}
+#p2:hover {
+  background: purple;
+}
+#p3 {
+  width: 120px;
+  height: 30px;
+  border-radius: 6px;
+  background: royalblue;
+}
+#p3:hover {
+  background: purple;
+}
+#p4 {
+  width: 120px;
+  height: 30px;
+  border-radius: 6px;
+  background: orange;
+  color: black;
+}
+#p4:hover {
+  background: purple;
+}
+#p5 {
+  color: red;
+  color: blue;
+  width: 120px;
+  height: 30px;
+  border-radius: 6px;
+  background: orange;
+}
+#p5:hover {
+  background: purple;
+}
+#list1 .li-1 {
+  width: 105px;
+}
+#list1 .li-2 {
+  width: 110px;
+}
+#list1 .li-3 {
+  width: 115px;
+}
+#list1 .li-4 {
+  width: 120px;
+}
+#list1 .li-5 {
+  width: 125px;
+}
+#list1 li {
+  margin: 1px;
+  color: white;
+  background: royalblue;
+}
+#list1 li:hover {
+  background: purple;
+}
+#list2 li {
+  margin: 1px;
+  color: white;
+  background: royalblue;
+}
+#list2 li:hover {
+  background: purple;
+}
+#list2 li:nth-child(1) {
+  width: 100px;
+}
+#list2 li:nth-child(2) {
+  width: 106px;
+}
+#list2 li:nth-child(3) {
+  width: 112px;
+}
+#list2 li:nth-child(4) {
+  width: 118px;
+}
+#list2 li:nth-child(5) {
+  width: 124px;
+}

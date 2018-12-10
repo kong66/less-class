@@ -1,0 +1,87 @@
+//"out":"./css/styles.css"
+
+@image-path:"../imgs";
+@btn-w:100px;
+@btn-h:30px;
+
+//
+body{
+  color:skyblue;
+  @media (max-width:1080px) {
+    @media screen{
+      body{
+        color:red;
+      }
+    }
+  }
+}
+//
+.parent{
+  color:orange;
+  .child{
+    font-style:italic;
+    .grandchild{
+      text-decoration: underline;
+    }
+  }
+}
+//
+p.child{
+  @side: 26px;
+  padding-left: @side;
+  position: relative;
+  &:before{
+    content:"";
+    display: block;
+    width: @side;
+    height: @side;
+    background: url("@{image-path}/github.png") center/@side no-repeat;
+    position: absolute;
+    left:0;
+    top:0;
+  }
+}
+//
+.btn{
+  width: @btn-w;
+  height: @btn-h;
+  border-radius: 10px;
+  &-a{
+    background: orange;
+  }
+  &-b{
+    background: purple;
+  }
+}
+
+//
+.parent{
+  &+&{color:red;}
+	& &{color:red;}
+	&&{color:red;}
+	&,&-hello{color:red;}
+}
+//
+.p{
+  color:red;
+  .c{
+    font-size: 12px;
+    &&{ font-style: italic;}
+    & &{font-style: italic;}
+    &+&{font-style: italic;}
+    &,&-hello{font-style: italic;}
+  }
+}
+//
+p,a,div{
+  color:red;
+  &+&{
+    font-size: 12px;
+  }
+}
+//
+.left{
+  .right &{
+    color:red;
+  }
+}

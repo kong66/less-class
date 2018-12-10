@@ -1,0 +1,31 @@
+h1 {
+  width: 300px;
+  height: 100px;
+  color: #1ea4c6;
+  text-align: center;
+  line-height: 110px;
+  background-color: #ddd;
+}
+.site {
+  display: block;
+  width: 100px;
+  height: 60px;
+  background: url() center center / contain no-repeat;
+}
+.site.google {
+  background-image: url("../imgs/google.png");
+}
+.site.github {
+  background-image: url("../imgs/github.png");
+}
+h2 {
+  color: orange;
+}
+h3 {
+  color: skyblue;
+}
+h4 {
+  color: orange;
+  border: $color 1px solid;
+  background-color: $color;
+}

@@ -1,0 +1,93 @@
+body {
+  color: skyblue;
+}
+@media (max-width: 1080px) and screen {
+  body body {
+    color: red;
+  }
+}
+.parent {
+  color: orange;
+}
+.parent .child {
+  font-style: italic;
+}
+.parent .child .grandchild {
+  text-decoration: underline;
+}
+p.child {
+  padding-left: 26px;
+  position: relative;
+}
+p.child:before {
+  content: "";
+  display: block;
+  width: 26px;
+  height: 26px;
+  background: url("../imgs/github.png") center / 26px no-repeat;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.btn {
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+}
+.btn-a {
+  background: orange;
+}
+.btn-b {
+  background: purple;
+}
+.parent + .parent {
+  color: red;
+}
+.parent .parent {
+  color: red;
+}
+.parent.parent {
+  color: red;
+}
+.parent,
+.parent-hello {
+  color: red;
+}
+.p {
+  color: red;
+}
+.p .c {
+  font-size: 12px;
+}
+.p .c.p .c {
+  font-style: italic;
+}
+.p .c .p .c {
+  font-style: italic;
+}
+.p .c + .p .c {
+  font-style: italic;
+}
+.p .c,
+.p .c-hello {
+  font-style: italic;
+}
+p,
+a,
+div {
+  color: red;
+}
+p + p,
+p + a,
+p + div,
+a + p,
+a + a,
+a + div,
+div + p,
+div + a,
+div + div {
+  font-size: 12px;
+}
+.right .left {
+  color: red;
+}

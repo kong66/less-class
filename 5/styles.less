@@ -1,0 +1,129 @@
+//"out":"./css/styles.css"
+
+body{
+  text-align: center;
+}
+ul,ol{
+  list-style: none;
+}
+
+.button(){
+  .size{
+    width: 120px;
+    height: 30px;
+    border-radius: 6px;
+  }
+  .color(@bg:royalblue;@h-bg:purple){
+    background: @bg;
+    &:hover{
+      background: @h-bg;
+    }
+  }
+}
+//1
+.widthToHeight(@w){
+  @result: @w / 4;
+}
+#p1{
+  .button.color();
+  width: 120px;
+  // height: .widthToHeight(120px)[@result];
+  height: 30px;
+  border-radius: 6px;
+}
+
+
+//2
+.p2_mixin(){
+  @width: 120px;
+  @height: 30px;
+  @radius: 10px;
+}
+#p2{
+  .p2_mixin();
+  @radius:6px;
+  width: @width;
+  height: @height;
+  border-radius: @radius;
+  .button.color();
+}
+
+.p3_mixin(){
+  @radius:6px;
+  .p3_mixin_inner{
+    @width: 120px;
+    @height: 30px;
+  }
+}
+#p3{
+  width: @width;
+  height: @height;
+  border-radius: @radius;
+  .p3_mixin();
+  .p3_mixin_inner();
+  //.p3_mixin.p3_mixin_inner();
+  .button.color();
+}
+//3
+.guard-color(@bgcolor) when(@bgcolor = black ){
+  color:white;
+}
+.guard-color(@bgcolor) when(@bgcolor = orange){
+  color:black;
+}
+#p4{
+  .button.size();
+  .button.color(orange);
+  .guard-color(orange);
+}
+
+.guard-color2(@x) when(@x < 100px) , (@x > 200px){
+  color: red;
+}
+.guard-color2(@x) when(@x >= 100px) and (@x <=200px){
+  color:yellow;
+}
+.guard-color2(@x) when not(@x > 60px){
+  color:blue;
+}
+#p5{
+  .guard-color2(30px);
+  .button.size();
+  .button.color(orange);
+}
+
+
+//4
+.set-width(@n;@i:1) when(@i <= @n){
+  .li-@{i}{
+    width:100px + 5px * @i;
+  }
+  .set-width(@n,@i + 1);
+}
+#list1{
+  .set-width(5);
+}
+#list1 li{
+  margin: 1px;
+  color:white;
+  .button.color();
+}
+
+.set-property(@sel;@property;@v;@del;@begin;@end) when(@begin <= @end){
+
+    @{sel}(@{begin}){
+      @{property}: @v;
+    }
+    .set-property(@sel;@property;@v + @del;@del;@begin + 1;@end);
+}
+
+#list2 li{
+  margin: 1px;
+  color:white;
+  .button.color();
+}
+#list2{
+  @pro:~"width";
+  @sel:~"li:nth-child";
+  .set-property(@sel;@pro;100px;6px;1;5);
+}

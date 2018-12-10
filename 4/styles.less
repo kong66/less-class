@@ -1,0 +1,149 @@
+//"out":"./css/styles.css"
+
+body{
+  text-align: center;
+}
+//1
+.btn{
+  display: block;
+  width: 120px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border:gray solid 1px;
+  border-radius: 6px;
+}
+a{
+  .btn();
+}
+//2
+.card(){
+  width: 120px;
+  height: 30px;
+  border-radius: 10px;
+  background: orange;
+}
+#p1{
+  .card();
+}
+//3
+#mix(){
+  width: 120px;
+  height: 30px;
+  border-radius: 10px;
+  background: orange;
+  &:hover{
+    background: purple;
+  }
+}
+#p2{
+  #mix();
+}
+//4
+#p3(){
+  width: 120px;
+  height: 30px;
+  border-radius: 10px;
+  background: skyblue;
+  &:hover{
+    background: purple;
+  }
+}
+#p3{
+  #p3() !important;
+  background:orange;
+}
+//5
+#button(){
+  .size{
+    width: 120px;
+    height: 30px;
+    border-radius: 10px;
+  }
+  .color{
+    background: royalblue;
+    &:hover{
+      background: purple;
+    }
+  }
+}
+#p4{
+  #button .size();
+  #button>.color();
+}
+//6
+#parametric(){
+  .size(@lenth;@radius:5px){
+    width: @lenth * 4;
+    height: @lenth;
+    border-radius: 10px;
+  }
+  .color(@btn-color){
+    background: @btn-color;
+    &:hover{
+      background: purple;
+    }
+  }
+}
+#p5{
+  #parametric.size(30px);
+  #parametric>.color(slateblue);
+}
+#parametric2(){
+  .size(@w){
+    width: @w;
+    height: 30px;
+    border-radius: 10px;
+  }
+  .size(@w:120px;@h){
+    width: @w;
+    height: @h;
+    border-radius: 10px;
+  }
+  .color(@normal:orange;@hover:purple){
+    background: @normal;
+    &:hover{
+      background: @hover;
+    }
+  }
+}
+#p6{
+  #parametric2.size(120px;30px);
+  #parametric2.color(@hover:yellow;@normal:wheat);
+}
+
+#parametric3(){
+  .shadow(@x:1px;@y:1px;@blur:2px;@color:black){
+    box-shadow: @arguments;
+  }
+  .border(...){
+    border: @arguments;
+  }
+  .background(@url,@rest...){
+    background: @url @rest;
+  }
+}
+#p7{
+  @s:~'/';
+  #parametric3.shadow();
+  #parametric3.border(1px;solid;gray);
+  #parametric3.background(
+      url(../imgs/cat.png);
+      center center;@s;30px 30px;
+      no-repeat);
+  #button .size();
+}
+//7
+#pattern(){
+  .shadow(in;...){
+    box-shadow: inset @arguments;
+  }
+  .shadow(out;...){
+    box-shadow: @arguments;
+  }
+}
+#p8{
+  #pattern.shadow(out;1px;1px;2px;black);
+  #button.size();
+  #button.color();
+}

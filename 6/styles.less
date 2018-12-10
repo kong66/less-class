@@ -1,0 +1,86 @@
+//"out":"./css/styles.css"
+
+body{
+  text-align: center;
+}
+ul,ol{
+  list-style: none;
+}
+.button(){
+  .size(@w:120px;@h:30px;@r:6px){
+    width: @w;
+    height: @h;
+    border-radius: @r;
+  }
+  .color(@bg:royalblue;@h-bg:purple){
+    background: @bg;
+    &:hover{
+      background: @h-bg;
+    }
+  }
+}
+//1
+.box-shadow(){
+  box-shadow+:inset 1px 1px #aaa;
+}
+#p1{
+  .box-shadow();
+  box-shadow+:1px 1px black;
+  .button.size();
+  .button.color();
+}
+
+.transform-scale(@s){
+  transform+_:scale(@s);
+}
+.transform-trans(@tx,@ty){
+  transform+_: translate(@tx,@ty);
+}
+.transform-rotate(@r){
+  transform+_: rotate(@r);
+}
+#p2{
+  .transform-trans(200px,50px);
+  .transform-rotate(20deg);
+  .transform-scale(2);
+  .button.size();
+  .button.color();
+}
+
+.set-shadow(@color;@x;@y;@n;@i:1) when(@i < @n){
+  box-shadow+: @x @y @color;
+  .set-shadow(@color;@x+1px;@y+1px;@n;@i+1);
+}
+#p3{
+  .set-shadow(gray;1px;1px;10);
+  .button.size();
+  .button.color(orange);
+}
+
+//2
+// #p4:extend(#p5){
+//   color:red;
+// }
+#p4{
+  &:extend(#p5);
+  color:red;
+}
+#p5{
+  .button.size();
+  .button.color();
+}
+.p6-1{
+  color:red;
+}
+.p6-2{
+  box-shadow: 1px 1px 3px red;
+}
+div.p6-1{
+  border:solid black 2px;
+}
+div.p6-2{
+  border:solid black 2px;
+}
+#p6:extend(.p6-1 all,.p6-2){
+
+}

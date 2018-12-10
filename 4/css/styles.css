@@ -1,0 +1,91 @@
+body {
+  text-align: center;
+}
+.btn {
+  display: block;
+  width: 120px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border: gray solid 1px;
+  border-radius: 6px;
+}
+a {
+  display: block;
+  width: 120px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border: gray solid 1px;
+  border-radius: 6px;
+}
+#p1 {
+  width: 120px;
+  height: 30px;
+  border-radius: 10px;
+  background: orange;
+}
+#p2 {
+  width: 120px;
+  height: 30px;
+  border-radius: 10px;
+  background: orange;
+}
+#p2:hover {
+  background: purple;
+}
+#p3 {
+  width: 120px !important;
+  height: 30px !important;
+  border-radius: 10px !important;
+  background: skyblue !important;
+  background: orange;
+}
+#p3:hover {
+  background: purple !important;
+}
+#p4 {
+  width: 120px;
+  height: 30px;
+  border-radius: 10px;
+  background: royalblue;
+}
+#p4:hover {
+  background: purple;
+}
+#p5 {
+  width: 120px;
+  height: 30px;
+  border-radius: 10px;
+  background: slateblue;
+}
+#p5:hover {
+  background: purple;
+}
+#p6 {
+  width: 120px;
+  height: 30px;
+  border-radius: 10px;
+  background: wheat;
+}
+#p6:hover {
+  background: yellow;
+}
+#p7 {
+  box-shadow: 1px 1px 2px black;
+  border: 1px solid gray;
+  background: url(../imgs/cat.png) center center / 30px 30px no-repeat;
+  width: 120px;
+  height: 30px;
+  border-radius: 10px;
+}
+#p8 {
+  box-shadow: 1px 1px 2px black;
+  width: 120px;
+  height: 30px;
+  border-radius: 10px;
+  background: royalblue;
+}
+#p8:hover {
+  background: purple;
+}
