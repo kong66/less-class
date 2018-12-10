@@ -63,3 +63,91 @@ div#p6 {
 div.p6-2 {
   border: solid black 2px;
 }
+#p6 {
+  width: 120px;
+  height: 30px;
+  border-radius: 6px;
+  background: royalblue;
+}
+#p6:hover {
+  background: purple;
+}
+.btn-1,
+#p7,
+#p8 {
+  color: yellow;
+}
+.btn-2,
+#p7,
+#p8 {
+  box-shadow: 1px 1px 3px black;
+}
+#p7,
+#p8 {
+  width: 120px;
+  height: 30px;
+  border-radius: 6px;
+  background: royalblue;
+}
+#p7:hover,
+#p8:hover {
+  background: purple;
+}
+.outer .inner,
+.ex {
+  color: red;
+}
+.inner .outer,
+.ex {
+  border-color: orange;
+}
+.ex {
+  background: red;
+}
+.x.class,
+.class.x,
+.class > .a,
+*.class {
+  color: blue;
+}
+.exact {
+  background: orange;
+}
+li:nth-child(n+3) {
+  color: blue;
+}
+.nth {
+  background: orange;
+}
+[type=text],
+.noQuote,
+.sigleQuote,
+.doubleQuote {
+  color: red;
+}
+[type='text'],
+.noQuote,
+.sigleQuote,
+.doubleQuote {
+  color: red;
+}
+[type="text"],
+.noQuote,
+.sigleQuote,
+.doubleQuote {
+  color: red;
+}
+.rect.size,
+#p9.size {
+  width: 120px;
+  height: 30px;
+  border-radius: 6px;
+}
+.rect.color,
+#p9.color {
+  background: orange;
+}
+.rect.color:hover,
+#p9.color:hover {
+  background: purple;
+}

@@ -69,6 +69,7 @@ ul,ol{
   .button.size();
   .button.color();
 }
+//3
 .p6-1{
   color:red;
 }
@@ -82,5 +83,76 @@ div.p6-2{
   border:solid black 2px;
 }
 #p6:extend(.p6-1 all,.p6-2){
-
+  .button.size();
+  .button.color();
 }
+
+//4
+// nested selector
+.btn-1{
+  color:yellow;
+}
+.btn-2{
+  box-shadow: 1px 1px 3px black;
+}
+#p7,#p8{
+  &:extend(.btn-1,.btn-2);
+  .button.size();
+  .button.color();
+}
+//extend inside ruleset
+.outer{
+  .inner{
+    color:red;
+  }
+  .inner &{
+    border-color: orange;
+  }
+}
+.ex:extend(.outer .inner,.inner .outer){
+  background: red;
+}
+//exact match
+.x.class,
+.class.x,
+.class>.a,
+*.class{
+  color:blue;
+}
+.exact:extend(.class){
+  background: orange;
+}
+//not match nth-exp
+li:nth-child(n+3){
+  color:blue;
+}
+.nth:extend(:nth-child(n+3)){
+  background: orange;
+}
+//quote in attribute selector does not matter
+[type=text]{
+  color:red;
+}
+[type='text']{
+  color:red;
+}
+[type="text"]{
+  color:red;
+}
+.noQuote:extend([type=text]){}
+.sigleQuote:extend([type='text']){}
+.doubleQuote:extend([type="text"]){}
+
+// extend with all
+.rect.size{
+  width:120px;
+  height: 30px;
+  border-radius: 6px;
+}
+.rect.color{
+  background: orange;
+  &:hover{
+    background: purple;
+  }
+}
+#p9:extend(.rect all){}
