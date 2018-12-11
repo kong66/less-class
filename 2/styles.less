@@ -1,5 +1,5 @@
 //"out":"./css/styles.css"
-//1
+//1 property value
 @h1-color:#1ea4c6;
 @h1-bgColor:#ddd;
 @h1-width:300px;
@@ -12,36 +12,70 @@ h1{
   line-height: @h1-height + 10px;
   background-color: @h1-bgColor;
 }
-//2
+//2 property
+@pro-color: color;
+@red: #f00;
+#p1{
+  @{pro-color}:@red;
+}
+//3 var for selector
+@sel-1:selector;
+.@{sel-1}{
+  color:purple;
+}
+@sel-2:.selector;
+@{sel-2}{
+  font-style: italic;
+}
+@sel-3:#h2;
+@{sel-3}{
+  font-weight: bolder;
+}
+@sel-4: h2.selector;
+@{sel-4}{
+  text-decoration: underline;
+}
+//4  selectors url
 @image-path:"../imgs";
-@sitelink:site;
-.@{sitelink}{
+.google{
   display: block;
   width: 100px;
   height: 60px;
-  background: url() center center/contain no-repeat;
+  background: url("@{image-path}/google.png") center center/contain no-repeat;
 }
-.@{sitelink}.google{
-  background-image:url("@{image-path}/google.png");
-}
-.@{sitelink}.github{
-  background-image:url("@{image-path}/github.png");
-}
-//3
-@h2-color:orange;
-@h1-color-name:h2-color;
-h2{
-  color:@@h1-color-name;
-}
-//4
+
+//4 var for var
+@color1:orange;
+@color2:color1;
 h3{
-  color:@h3-color;
+  color:@@color2;
 }
-@h3-color:@h3-color2;
-@h3-color2:skyblue;
-//5
+//5 lazy evaluation
 h4{
+  color:@colorA;
+}
+@colorA:@colorB;
+@colorB:skyblue;
+
+//5 property as variable
+h5{
   color:orange;
   border: $color 1px solid;
   background-color: $color;
+}
+
+//6 Escaping
+@min768: ~"(min-width: 768px)";
+.element {
+  @media @min768 {
+    font-size: 1.2rem;
+  }
+}
+@f: ~"calc(30px / 2 )";
+p{
+  font-size: @f;
+}
+@w: calc(120px + 2px);
+p{
+  width: @w;
 }

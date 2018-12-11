@@ -6,26 +6,46 @@ h1 {
   line-height: 110px;
   background-color: #ddd;
 }
-.site {
+#p1 {
+  color: #f00;
+}
+.selector {
+  color: purple;
+}
+.selector {
+  font-style: italic;
+}
+#h2 {
+  font-weight: bolder;
+}
+h2.selector {
+  text-decoration: underline;
+}
+.google {
   display: block;
   width: 100px;
   height: 60px;
-  background: url() center center / contain no-repeat;
-}
-.site.google {
-  background-image: url("../imgs/google.png");
-}
-.site.github {
-  background-image: url("../imgs/github.png");
-}
-h2 {
-  color: orange;
+  background: url("../imgs/google.png") center center / contain no-repeat;
 }
 h3 {
-  color: skyblue;
+  color: orange;
 }
 h4 {
+  color: skyblue;
+}
+h5 {
   color: orange;
   border: $color 1px solid;
   background-color: $color;
+}
+@media (min-width: 768px) {
+  .element {
+    font-size: 1.2rem;
+  }
+}
+p {
+  font-size: calc(30px / 2 );
+}
+p {
+  width: calc(122px);
 }

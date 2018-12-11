@@ -156,3 +156,84 @@ li:nth-child(n+3){
   }
 }
 #p9:extend(.rect all){}
+
+// unable match selector with variables
+@var: .target;
+@{var}{
+  color:red;
+}
+.var-class:extend(.target){}
+
+.target2{
+  color:red;
+}
+@var2:.target2;
+.var-class2:extend(@{var2}){}
+
+.target3{
+  color:red;
+}
+@var3: .varclass3;
+@{var3}:extend(.target3){}
+
+// @media
+
+@media screen{
+  .mediaInner:extend(.mediaA){}
+  @media (min-width: 1080px){
+    .mediaA{
+      color:green;
+    }
+  }
+  .mediaA{
+    color:red;
+  }
+}
+.mediaA{
+  color:blue;
+}
+@media print{
+  .mediaA{
+    color:yellow;
+  }
+}
+@media screen{
+  .mediaB{
+    color:red;
+  }
+  @media (min-width: 1080px){
+    .mediaB{
+      color:green;
+    }
+  }
+}
+.top:extend(.mediaB){}
+
+//duplication detection
+.dupA,.dupB{
+  color:red;
+}
+.dup:extend(.dupA,.dupB){}
+
+//reduce css
+.max-class(){
+  color:red;
+  background: black;
+}
+.max-a{
+  .max-class();
+}
+.max-b{
+  .max-class();
+}
+
+.min-class{
+  color:red;
+  background: black;
+}
+.min-a{
+  &:extend(.min-class);
+}
+.min-b{
+  &:extend(.min-class);
+}

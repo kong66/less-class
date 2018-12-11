@@ -151,3 +151,64 @@ li:nth-child(n+3) {
 #p9.color:hover {
   background: purple;
 }
+.target {
+  color: red;
+}
+.target2 {
+  color: red;
+}
+.target3,
+.varclass3 {
+  color: red;
+}
+@media screen {
+  .mediaA,
+  .mediaInner {
+    color: red;
+  }
+}
+@media screen and (min-width: 1080px) {
+  .mediaA {
+    color: green;
+  }
+}
+.mediaA {
+  color: blue;
+}
+@media print {
+  .mediaA {
+    color: yellow;
+  }
+}
+@media screen {
+  .mediaB,
+  .top {
+    color: red;
+  }
+}
+@media screen and (min-width: 1080px) {
+  .mediaB,
+  .top {
+    color: green;
+  }
+}
+.dupA,
+.dupB,
+.dup,
+.dup {
+  color: red;
+}
+.max-a {
+  color: red;
+  background: black;
+}
+.max-b {
+  color: red;
+  background: black;
+}
+.min-class,
+.min-a,
+.min-b {
+  color: red;
+  background: black;
+}
