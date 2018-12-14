@@ -1,0 +1,254 @@
+//"out":"./css/styles.css"
+
+.rect{
+  p,span{
+    float: left;
+    line-height: 30px;
+    width: 120px;
+    height: 30px;
+    border-radius: 6px;
+    text-align: center;
+    margin: 10px 5px;
+  }
+  &:after{
+    content:"";
+    display: block;
+    clear:both;
+  }
+}
+
+//1 color define
+.color-define{
+  @red:255;
+  color:rgb(@red,0,0);
+  color:rgba(@red,0,0,.5);
+  @hue:90;
+  color:hsla(@hue,100%,50%,.5);
+}
+
+
+//2 clor channel extract
+.hsl{
+  @color:hsl(0,100%,50%);
+  color:hsl(hue(@color),saturation(@color),lightness(@color));
+  @color2: rgba(200,100,10,.5);
+  color:rgba(red(@color2),green(@color2),blue(@color2),alpha(@color2));
+}
+//3 saturate/desaturate
+.rect p{
+  .rect();
+}
+@saturate:hsl(0,50%,50%);
+.saturate>#standard{
+  background: @saturate;
+}
+.saturate>#saturate{
+  background: saturate(@saturate,30%);
+}
+.saturate>#desaturate{
+  background: desaturate(@saturate,30%);
+}
+//4 lighten/darken
+@lightness:hsl(0,50%,50%);
+.lightness>#standard{
+  background: @lightness;
+}
+.lightness>#lighten{
+  background: lighten(@lightness,10%);
+}
+.lightness>#darken{
+  background: darken(@lightness,10%);
+}
+//fadein / fadeout
+@alpha:hsla(0,50%,50%,.5);
+.alpha>#standard{
+  background: @alpha;
+}
+.alpha>#fadein{
+  background: fadein(@alpha,20%);
+}
+.alpha>#fadeout{
+  background: fadeout(@alpha,20%);
+}
+//spin
+@spin:hsl(0,60%,50%);
+.spin>#standard{
+  background: @spin;
+}
+.spin>#spin1{
+  background: spin(@spin,100%);
+}
+.spin>#spin2{
+  background: spin(@spin,180);
+}
+.spin>#spin3{
+  background: spin(@spin,-90);
+}
+//mix
+@mix-a:hsl(0,90%,50%);
+@mix-b:hsl(225,90%,50%);
+.mix>#a{
+  background: @mix-a;
+}
+.mix>#b{
+  background: @mix-b;
+}
+.mix>#mix1{
+  background: mix(@mix-a,@mix-b,50%);
+}
+.mix>#mix2{
+  background: mix(@mix-a,@mix-b,30%);
+}
+//tint/shade
+@tint-shade:hsl(0,50%,50%);
+.tint-shade>#standard{
+  background: @tint-shade;
+}
+.tint-shade>#tint{
+  background: tint(@tint-shade,50%);
+}
+.tint-shade>#shade{
+  background: shade(@tint-shade,50%);
+}
+//greyscale
+@greyscale:hsl(0,50%,50%);
+.greyscale>#standard{
+  background: @greyscale;
+}
+.greyscale>#greyscale{
+  background: greyscale(@greyscale);
+}
+//contrast
+@contrast:hsl(0,50%,50%);
+.contrast>#standard{
+  background: @contrast;
+}
+.contrast>#contrast{
+  background: contrast(@contrast,orange,black,100%);
+}
+
+//multiply
+@multiply-a:red;
+@multiply-b:purple;
+.multiply>#a{
+  background: @multiply-a;
+}
+.multiply>#b{
+  background: @multiply-b;
+}
+.multiply>#c{
+  background: multiply(@multiply-a,@multiply-b);
+}
+//screen
+@screen-a:red;
+@screen-b:purple;
+.screen>#a{
+  background: @screen-a;
+}
+.screen>#b{
+  background: @screen-b;
+}
+.screen>#c{
+  background: screen(@screen-a,@screen-b);
+}
+//overlay
+.overlay>#a{
+  background: overlay(#ff6600, #000000);
+}
+.overlay>#b{
+  background: overlay(#ff6600, #999999);
+}
+.overlay>#c{
+  background: overlay(#ff6600, #00ff00);
+}
+//solft-hard-light
+@solft-hard-light-a:red;
+@solft-hard-light-b:yellow;
+.solft-hard-light>#a{
+  background: @solft-hard-light-a;
+}
+.solft-hard-light>#b{
+  background: @solft-hard-light-b;
+}
+.solft-hard-light>#solft{
+  background: softlight(@solft-hard-light-a, @solft-hard-light-b);
+}
+.solft-hard-light>#hard{
+  background: hardlight(@solft-hard-light-a,@solft-hard-light-b);
+}
+//difference
+@difference-a:red;
+@difference-b:#333;
+@difference-c:#ccc;
+.difference>#a{
+  background: @difference-a;
+}
+.difference>#b{
+  background: @difference-b;
+}
+.difference>#c{
+  background: @difference-c;
+}
+.difference>#res1{
+  background: difference(@difference-a, @difference-b);
+}
+.difference>#res2{
+  background: difference(@difference-a,@difference-c);
+}
+//exclusion
+@exclusion-a:red;
+@exclusion-b:#333;
+@exclusion-c:#ccc;
+.exclusion>#a{
+  background: @exclusion-a;
+}
+.exclusion>#b{
+  background: @exclusion-b;
+}
+.exclusion>#c{
+  background: @exclusion-c;
+}
+.exclusion>#res1{
+  background: exclusion(@exclusion-a, @exclusion-b);
+}
+.exclusion>#res2{
+  background: exclusion(@exclusion-a,@exclusion-c);
+}
+//average
+@average-a:red;
+@average-b:#333;
+@average-c:#ccc;
+.average>#a{
+  background: @average-a;
+}
+.average>#b{
+  background: @average-b;
+}
+.average>#c{
+  background: @average-c;
+}
+.average>#res1{
+  background: average(@average-a, @average-b);
+}
+.average>#res2{
+  background: average(@average-a,@average-c);
+}
+//negation
+@negation-a:red;
+@negation-b:#333;
+@negation-c:#ccc;
+.negation>#a{
+  background: @negation-a;
+}
+.negation>#b{
+  background: @negation-b;
+}
+.negation>#c{
+  background: @negation-c;
+}
+.negation>#res1{
+  background: negation(@negation-a, @negation-b);
+}
+.negation>#res2{
+  background: negation(@negation-a,@negation-c);
+}

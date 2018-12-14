@@ -1,0 +1,139 @@
+//"out":"./css/styles.css"
+
+.rect{
+    width: 120px;
+    height: 30px;
+    border-radius: 6px;
+    text-align: center;
+}
+//1 detached ruleset
+@btn-color:{
+  color:black;
+  background: orange;
+};
+#p1{
+  @btn-color();
+}
+//2 as argument of mixin
+@var-p2:{
+  color:purple;
+  background: skyblue;
+};
+.p2(@rule){
+  @rule();
+}
+#p2{
+  .p2(@var-p2);
+}
+// call detached ruleset
+@var-p3:{
+  .color(){
+    color:white;
+  }
+  .bg(){
+    background-color:royalblue;
+  }
+};
+#p3{
+  @var-p3();
+  .color();
+  .bg();
+}
+//private var
+@private:{
+  @color:red;
+}
+.private{
+  //@private();
+  //color:@color;
+}
+//media bublle
+@rule:{
+  .inner{
+    @media screen{
+      color: red;
+    }
+  }
+};
+@media (max-width:768px){
+  @rule();
+}
+//definition caller scope
+@p4:{
+  color:@red;
+  .bg();
+};
+#p4{
+  @p4();
+  @red:red;
+  .bg(){
+    background: purple;
+  }
+}
+//definition scope take precedence
+@p5-bg:limegreen;
+@p5:{
+  background: @p5-bg;
+};
+#p5{
+  @p5();
+  @p5-bg:red;
+}
+//not gain access to new scope just by being referenced
+// @p6: {
+//    color: @p6-color;
+//    background: @p6-bg;
+//  };
+// .color {
+//   @p6-color: red;
+//   .bg {
+//
+//     @p6-2: @p6;
+//     @p6-bg: black;
+//   }
+// }
+// #p6 {
+//   .color.bg();
+//   @p6();
+// }
+
+// gains access by being unlocked (imported) inside a scope
+@p7:{
+  background: @red;
+};
+.p7(){
+  @red:red;
+}
+#p7{
+   .p7();
+  @p7();
+}
+
+//@import
+//@import "styles2.less";
+
+//reference
+// @import (reference) "styles2.less";
+// #d1{
+//   .d1();
+//   &:extend(.d1-color);
+// }
+
+
+//inline
+//@import (inline) "styles2.less";
+
+//less
+//@import (less) "./styles2.less";
+//css
+//@import (css) "./css/styles2.css";
+
+//once
+//@import (once) "./styles2.less";
+
+//multiple
+// @import (multiple)  "./styles.less";
+// @import (multiple)  "./styles.less";
+
+//optional
+@import (optional) "./abc.less";

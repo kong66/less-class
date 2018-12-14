@@ -1,0 +1,210 @@
+.rect p,
+.rect span {
+  float: left;
+  line-height: 30px;
+  width: 120px;
+  height: 30px;
+  border-radius: 6px;
+  text-align: center;
+  margin: 10px 5px;
+}
+.rect:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.color-define {
+  color: #ff0000;
+  color: rgba(255, 0, 0, 0.5);
+  color: rgba(128, 255, 0, 0.5);
+}
+.hsl {
+  color: #ff0000;
+  color: rgba(200, 100, 10, 0.5);
+}
+.rect p p,
+.rect p span {
+  float: left;
+  line-height: 30px;
+  width: 120px;
+  height: 30px;
+  border-radius: 6px;
+  text-align: center;
+  margin: 10px 5px;
+}
+.rect p:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.saturate > #standard {
+  background: #bf4040;
+}
+.saturate > #saturate {
+  background: #e61919;
+}
+.saturate > #desaturate {
+  background: #996666;
+}
+.lightness > #standard {
+  background: #bf4040;
+}
+.lightness > #lighten {
+  background: #cc6666;
+}
+.lightness > #darken {
+  background: #993333;
+}
+.alpha > #standard {
+  background: rgba(191, 64, 64, 0.5);
+}
+.alpha > #fadein {
+  background: rgba(191, 64, 64, 0.7);
+}
+.alpha > #fadeout {
+  background: rgba(191, 64, 64, 0.3);
+}
+.spin > #standard {
+  background: #cc3333;
+}
+.spin > #spin1 {
+  background: #66cc33;
+}
+.spin > #spin2 {
+  background: #33cccc;
+}
+.spin > #spin3 {
+  background: #7f33cc;
+}
+.mix > #a {
+  background: #f20d0d;
+}
+.mix > #b {
+  background: #0d46f2;
+}
+.mix > #mix1 {
+  background: #802980;
+}
+.mix > #mix2 {
+  background: #5235ad;
+}
+.tint-shade > #standard {
+  background: #bf4040;
+}
+.tint-shade > #tint {
+  background: #df9f9f;
+}
+.tint-shade > #shade {
+  background: #602020;
+}
+.greyscale > #standard {
+  background: #bf4040;
+}
+.greyscale > #greyscale {
+  background: #808080;
+}
+.contrast > #standard {
+  background: #bf4040;
+}
+.contrast > #contrast {
+  background: orange;
+}
+.multiply > #a {
+  background: red;
+}
+.multiply > #b {
+  background: purple;
+}
+.multiply > #c {
+  background: #800000;
+}
+.screen > #a {
+  background: red;
+}
+.screen > #b {
+  background: purple;
+}
+.screen > #c {
+  background: #ff0080;
+}
+.overlay > #a {
+  background: #ff0000;
+}
+.overlay > #b {
+  background: #ff7a00;
+}
+.overlay > #c {
+  background: #ffcc00;
+}
+.solft-hard-light > #a {
+  background: red;
+}
+.solft-hard-light > #b {
+  background: yellow;
+}
+.solft-hard-light > #solft {
+  background: #ff0000;
+}
+.solft-hard-light > #hard {
+  background: #ffff00;
+}
+.difference > #a {
+  background: red;
+}
+.difference > #b {
+  background: #333;
+}
+.difference > #c {
+  background: #ccc;
+}
+.difference > #res1 {
+  background: #cc3333;
+}
+.difference > #res2 {
+  background: #33cccc;
+}
+.exclusion > #a {
+  background: red;
+}
+.exclusion > #b {
+  background: #333;
+}
+.exclusion > #c {
+  background: #ccc;
+}
+.exclusion > #res1 {
+  background: #cc3333;
+}
+.exclusion > #res2 {
+  background: #33cccc;
+}
+.average > #a {
+  background: red;
+}
+.average > #b {
+  background: #333;
+}
+.average > #c {
+  background: #ccc;
+}
+.average > #res1 {
+  background: #991a1a;
+}
+.average > #res2 {
+  background: #e66666;
+}
+.negation > #a {
+  background: red;
+}
+.negation > #b {
+  background: #333;
+}
+.negation > #c {
+  background: #ccc;
+}
+.negation > #res1 {
+  background: #cc3333;
+}
+.negation > #res2 {
+  background: #33cccc;
+}

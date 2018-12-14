@@ -1,0 +1,120 @@
+//"out":"./css/styles.css"
+
+body{
+  text-align: center;
+}
+ul,ol{
+  list-style: none;
+}
+.button(){
+  .size(@w:120px;@h:30px;@r:6px){
+    width: @w;
+    height: @h;
+    border-radius: @r;
+  }
+  .color(@bg:royalblue;@h-bg:purple){
+    background: @bg;
+    &:hover{
+      background: @h-bg;
+    }
+  }
+}
+//1 image-width height
+#p1{
+  height: image-height("./imgs/cat.png");
+  width: image-width("./imgs/cat.png");
+  background: url(./../imgs/cat.png) center/100% no-repeat;
+}
+
+//unit
+.convert{
+  width: convert(2mm,'cm');
+  height: convert(2,'px');
+}
+.unit{
+  @w:20em;
+  width: unit(5,px);
+  height: unit(2,get-unit(@w));
+  line-height: unit(5px);
+}
+//if
+.if{
+  // color:if(not(true),red,blue);
+  // background-color: if((1>0) and (2>3),red,blue);
+  // border-color: if((1<0) or (2<3),red,blue);
+  // color:if((2>1)),red,blue);
+}
+//string
+
+.format::after{
+  content: %("d %d %d %d %d",
+    20px,100+99,"hello",hsl(0,0%,0%));
+  content: %("D %D %D %D %D",
+    20px,100+99,"hello",hsl(0,0%,0%));
+  content: %("s %s %s %s %s",
+    20px,100+99,"hello",hsl(0,0%,0%));
+  content: %("S %S %S %S %S",
+    20px,100+99,"hello",hsl(0,0%,0%));
+  content: %("a %a %a %a %a",
+    20px,100+99,"hello",hsl(0,0%,0%));
+  content: %("A %A %A %A %A",
+    20px,100+99,"hello",hsl(0,0%,0%));
+}
+.string{
+  content: escape('<html>');
+  @bg: "calc(50% - 20px)";
+  width: e(@bg);
+}
+.replace{
+  content:replace("box:1px 1px color;",color,#00aa10);
+  box-shadow:replace(~"box:1px 1px color",color,#00aa10);
+}
+
+//list
+@colors:red,green,blue,yellow,purple;
+.list{
+  color:extract(@colors,3);
+  n:length(@colors);
+}
+
+//Math
+.math{
+  width: round(3.9px);
+  width: floor(3.9px);
+  height: percentage(.25);
+  height: abs(-1em);
+  width: sin(30deg);
+  height: mod(1em,0);
+  height: mod(27.3em,10);
+  width: min(100px,3px,2px);
+  height: max(10%,20%);
+}
+//type
+.type-isnumber{
+  isnumber:isnumber(100px) isnumber(#000) isnumber(red) isnumber(red) isnumber("123") ;
+}
+.type-isstring{
+  isstring:isstring("abc") isstring(red) isstring(100px);
+}
+.type-iscolor{
+  iscolor:iscolor(#abc) iscolor(hsl(0,0%,0%)) iscolor(red) iscolor('red');
+}
+.type-iskeyword{
+  iskeyword:iskeyword(isnumber) iskeyword(if) iskeyword(hsl) iskeyword(red);
+}
+.type-ispixel{
+  ispixel:ispixel(100px) ispixel(10em);
+}
+.type-isem{
+  isem:isem(100px) isem(10em);
+}
+.type-isunit{
+  isunit:isunit(100px,px) isunit(1em,em) isunit(1%,%);
+}
+.type-isruleset{
+  @x: {
+      color: red;
+  };
+  @y: box-shadow;
+  isruleset:isruleset(@x) isruleset(@y);
+}

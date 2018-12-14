@@ -1,0 +1,33 @@
+.rect {
+  width: 120px;
+  height: 30px;
+  border-radius: 6px;
+  text-align: center;
+}
+#p1 {
+  color: black;
+  background: orange;
+}
+#p2 {
+  color: purple;
+  background: skyblue;
+}
+#p3 {
+  color: white;
+  background-color: royalblue;
+}
+@media (max-width: 768px) and screen {
+  .inner {
+    color: red;
+  }
+}
+#p4 {
+  color: red;
+  background: purple;
+}
+#p5 {
+  background: red;
+}
+#p7 {
+  background: red;
+}

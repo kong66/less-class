@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.d1 {
+  background: lightsteelblue;
+}
+.d1-color {
+  color: black;
+}
+.d1-w {
+  width: 100px;
+}
+.inline {
+  color: red;
+}
